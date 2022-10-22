@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitys.MainActivity"
+    android:id="@+id/main_scrollview">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="30dp"
+        >
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_baseline_local_drink_24"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
+            app:tint="@color/cool_title"/>
+        <RadioGroup
+            android:id="@+id/search_term_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/drink_search_radio_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/cool_title"
+                android:text="음료검색"
+                android:checked="true"
+                />
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/add_search_radio_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/cool_title"
+                android:text="성분검색"
+                android:checked="false"
+                />
+        </RadioGroup>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_term_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent"
+            app:boxStrokeColor="@color/cool_title"
+            app:helperText="검색어를 입력해주세요."
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            app:endIconMode="clear_text"
+            app:startIconDrawable="@drawable/ic_baseline_search_24"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="음료검색"
+            app:hintTextColor="@color/cool_title"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_term_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="12"
+                android:inputType="textWebEditText"
+                android:textColor="@color/cool_title"
+                android:privateImeOptions="defaultInputmode=korean"
+                android:layout_marginBottom="5dp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <include
+            layout = "@layout/layout_button_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            />
+    </LinearLayout>
+
+</ScrollView>
